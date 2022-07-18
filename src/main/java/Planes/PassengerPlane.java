@@ -5,7 +5,7 @@ import java.util.Objects;
 public class PassengerPlane extends Plane{
 
     //=================FIELDS=================
-    private int passengersCapacity;
+    private final int passengersCapacity;
 
     //=================CONSTRUCTORS=================
     public PassengerPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, int passengersCapacity) {
@@ -16,22 +16,15 @@ public class PassengerPlane extends Plane{
 
     //=================METHODS=================
     public int getPassengersCapacity() {
-        return passengersCapacity;
+        return this.passengersCapacity;
     }
 
     @Override
     public String toString() {
-        return super.toString().replace("}",
-                ", passengersCapacity=" + passengersCapacity +
+        return super.toString().replace("Plane{", "PassengerPlane{").replace("}",
+                ", passengersCapacity=" + this.passengersCapacity +
                 '}');
     }
-
-//    @Override
-//    public String toString() {
-//        return super.toString().replace("}",
-//                ", passengersCapacity=" + passengersCapacity +
-//                        '}');
-//    }
 
     @Override
     public boolean equals(Object o) {
